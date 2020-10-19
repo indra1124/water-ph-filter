@@ -50,7 +50,7 @@ void loop()
   */
 
   for(int i = 0; i < 10; i++) { 
-    buffer_data[i] = analogRead(WATER_PH_SENSOR);
+    buffer_data[i] = analogRead(WATER_PH_SENSOR);// membaca water sensor
     delay(10);
   }
   
@@ -67,7 +67,7 @@ void loop()
     avgValue += buffer_data[i];
   }
 
-  float pHVol = (float)avgValue* 5.0 / 1024 / 6;
+  float pHVol = (float)avgValue* 5.0 / 1024 / 6;//kalkulasi sensor ph
   float ph_value = -5.70 * pHVol + 21.34;
 
   if(run_time < millis()) {
